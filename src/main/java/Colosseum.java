@@ -73,6 +73,10 @@ public class Colosseum {
      */
     public static Pokemon buildPokemon() {
         Pokemon tempPokemon = new Pokemon();
+        System.out.println("Name:");
+        tempPokemon.name = myScan.nextLine();
+
+        
         return tempPokemon;
     }
 
@@ -90,7 +94,13 @@ public class Colosseum {
      * Implement this function.
      */
     public static void printWhoIsAhead() {
-        System.out.println("Implement me!");
+        if (firstPokemon.hitPoints > secondPokemon.hitPoints) {
+            System.out.println(firstPokemon.name + " is ahead");
+        } else if (firstPokemon.hitPoints < secondPokemon.hitPoints) {
+            System.out.println(secondPokemon.name + " is ahead");
+        } else {
+            System.out.println("Neither pokemon is ahead");
+        }
     }
 
     /**
@@ -101,9 +111,12 @@ public class Colosseum {
      * Write this function.
      */
     public static void determineWinner() {
-        System.out.println("Implement me!");
-    }
-
+            if (firstPokemon.hitPoints == 0) {
+                System.out.println(secondPokemon.name + " is the winner.");
+            } else {
+                System.out.println(firstPokemon.name + " is the winner.");
+            }
+        }
     /**
      * Initializes the member Pokemons.
      * <p>
@@ -122,7 +135,6 @@ public class Colosseum {
         secondPokemon = buildPokemon();
         secondPokemon.name = "Xyz";
     }
-
     /**
      * Determines the order of which Pokemon will go first.
      * <p>
