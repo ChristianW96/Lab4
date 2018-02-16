@@ -76,7 +76,7 @@ public class Colosseum {
         System.out.println("Name:");
         tempPokemon.name = myScan.nextLine();
 
-        
+
         return tempPokemon;
     }
 
